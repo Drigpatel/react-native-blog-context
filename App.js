@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import IndexScreen from './src/screens/IndexScreen';
 import { Provider } from './src/context/BlogContext';
-import AnotherScreen from './src/screens/AnotherScreen';
+import AnotherScreen from './src/screens/AnotherScreen'; // Another screen is redirected to the Blog app
 import { StatusBar } from 'expo-status-bar';
 
 const Stack = createStackNavigator();
