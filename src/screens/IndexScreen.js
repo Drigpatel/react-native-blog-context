@@ -17,7 +17,7 @@ const IndexScreen = ({ navigation }) => {
   return (
     <View>
       <StatusBar barStyle='dark' backgroundColor='#000' />
-      <Button title='Add Post' onPress={addBlogPost} />
+      <Button title='Add Post' onPress={addBlogPost} /> //this is for the button title that will be displayed
       <FlatList
         data={state}
         keyExtractor={(blogPost) => blogPost.title}
