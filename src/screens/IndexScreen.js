@@ -1,62 +1,31 @@
-import React, { useContext } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Button,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
-import { Context } from '../context/BlogContext';
-import { Feather } from '@expo/vector-icons';
-
-const IndexScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
-
-  return (
-    <View>
-      <StatusBar barStyle='dark' backgroundColor='#000' />
-      <Button title='Add Post' onPress={addBlogPost} /> //this is for the button title that will be displayed
-      <FlatList
-        data={state}
-        keyExtractor={(blogPost) => blogPost.title}
-        renderItem={({ item }) => {
-          return (
-            <View style={styles.row}>
-              <Text style={styles.title}>
-                {item.title} - {item.id}
-              </Text>
-              <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-                <Feather style={styles.icon} name='trash' />
-              </TouchableOpacity>
-            </View>
-          );
-        }}
-      />
-      <Button
-        onPress={() => navigation.navigate('Another')}
-        title='Another Page'
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    borderTopWidth: 1,
-    borderColor: 'gray',
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
-  title: {
-    fontSize: 18,
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/compat": "^5.2.6",
+    "@react-navigation/native": "^5.7.4",
+    "@react-navigation/stack": "^5.9.1",
+    "expo": "~39.0.2",
+    "expo-status-bar": "~1.0.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
+    "react-native-gesture-handler": "~1.7.0",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.4",
+    "react-native-screens": "~2.10.1",
+    "react-native-web": "~0.13.12",
+    "react-navigation": "^4.4.1"
   },
-  icon: {
-    fontSize: 24,
+  "devDependencies": {
+    "@babel/core": "~7.9.0"
   },
-});
-
-export default IndexScreen;
+  "private": true
+}
